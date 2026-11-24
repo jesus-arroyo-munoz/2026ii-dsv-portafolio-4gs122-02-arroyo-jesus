@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 img-src 'self';
+                 style-src 'self';
+                 base-uri 'self';
+                 form-action 'self'">
+                  
+  <meta name="description" content="Formulario para solicitar el préstamo a domicilio de un libro de la Colección General.">
+  <meta name="author" content="Equipo 03, Grupo 4GS122">
+  <title>Solicitar un préstamo | Biblioteca Universitaria</title>
+  <link rel="icon" href="assets/img/logo-biblioteca.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/biblioteca-base.css">
+</head>
+<body id="inicio">
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <img src="assets/img/logo-biblioteca.svg" alt="" width="64" height="64">
+    <hgroup>
+      <h1>Solicitar un préstamo</h1>
+      <p>Biblioteca Universitaria</p>
+    </hgroup>
+    <p>
+      Equipo 03 · Grupo 4GS122<br>
+      Jesús Arroyo · 4GS122-02<br>
+      Isaac Barba · 4GS122-03<br>
+      Eduardo Barría · 4GS122-04
+    </p>
+  </header>
+
+  <nav aria-labelledby="titulo-menu">
+    <h2 id="titulo-menu">La biblioteca</h2>
+    <ul>
+      <li><a href="index.html">Préstamo a domicilio</a></li>
+      <li><a href="catalogo.html">Catálogo y préstamos</a></li>
+      <li><a href="prestamo.html" aria-current="page">Solicitar un préstamo</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <h2>Formulario de solicitud</h2>
+    <p>Completa los tres bloques para pedir un libro de la Colección General. Todos los campos son obligatorios, salvo las observaciones.</p>
+
+    <form action="/api/prestamos" method="post">
+
+      <!-- Bloque 1: datos del usuario -->
+      <fieldset>
+        <legend>Datos del usuario</legend>
+
+        <p>
+          <label for="nombre">Nombre completo</label><br>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        </p>
+
+        <p>
+          <label for="codigo">Código de usuario</label><br>
+          <input id="codigo" name="codigo" type="text" inputmode="numeric"
+                 pattern="[0-9]{8}" title="El código tiene ocho dígitos"
+                 aria-describedby="ayuda-usuario" required>
+        </p>
+
+        <p>
+          <label for="correo">Correo institucional</label><br>
+          <input id="correo" name="correo" type="email" autocomplete="email"
+                 pattern="[A-Za-z0-9._+\-]+@utp\.ac\.pa"
+                 title="Usa tu correo institucional, que termina en @utp.ac.pa"
+                 aria-describedby="ayuda-usuario" required>
+        </p>
+
+        <p id="ayuda-usuario">
+          El código tiene ocho dígitos. El correo debe terminar en @utp.ac.pa.
+        </p>
+      </fieldset>
+
+      <!-- Bloque 2: el libro -->
+      <fieldset>
+        <legend>El libro</legend>
+
+        <p>
+          <label for="titulo">Título</label><br>
+          <input id="titulo" name="titulo" type="text" list="titulos" required>
+          <datalist id="titulos">
+            <option value="Clean Code"></option>
+            <option value="Eloquent JavaScript"></option>
+            <option value="HTML and CSS: Design and Build Websites"></option>
+            <option value="Fundamentos de bases de datos"></option>
+            <option value="Ingeniería del software"></option>
+          </datalist>
+        </p>
+
+        <fieldset>
+          <legend>Ejemplar</legend>
+          <input id="ej-1" name="ejemplar" type="radio" value="e1" disabled
+                 aria-describedby="ayuda-ej1">
+          <label for="ej-1">e.1</label>
+          <input id="ej-2" name="ejemplar" type="radio" value="e2" required>
+          <label for="ej-2">e.2</label>
+          <input id="ej-3" name="ejemplar" type="radio" value="e3">
+          <label for="ej-3">e.3</label>
+          <p id="ayuda-ej1">El e.1 no se presta: se reserva para consulta en sala.</p>
+        </fieldset>
+
+        <p>
+          <label for="retiro">Fecha de retiro</label><br>
+          <input id="retiro" name="retiro" type="date" min="2026-11-23" required>
+        </p>
+      </fieldset>
+
+      <!-- Bloque 3: condiciones -->
+      <fieldset>
+        <legend>Condiciones</legend>
+
+        <p>
+          <input id="sin-adeudos" name="sin_adeudos" type="checkbox" value="si" required>
+          <label for="sin-adeudos">Declaro que no tengo adeudos ni multas.</label>
+        </p>
+
+        <p>
+          <input id="reglamento" name="reglamento" type="checkbox" value="si" required>
+          <label for="reglamento">Acepto las <a href="index.html#renovaciones">condiciones de renovación</a>.</label>
+        </p>
+
+        <p>
+          <label for="observaciones">Observaciones (opcional)</label><br>
+          <textarea id="observaciones" name="observaciones" rows="4" maxlength="300"></textarea>
+        </p>
+      </fieldset>
+
+      <p><button type="submit">Enviar solicitud</button></p>
+    </form>
+  </main>
+
+  <footer>
+    <address>
+      <strong><cite>Biblioteca Universitaria</cite></strong><br>
+      Centro Regional de Veraguas, Santiago, Panamá<br>
+      <a href="mailto:prestamos@biblioteca.example">prestamos@biblioteca.example</a>
+    </address>
+    <p>Última actualización: <time datetime="2026-11-20">20 de noviembre de 2026</time>.</p>
+    <p><a href="#inicio">Volver arriba</a></p>
+    <p><small>Proyecto académico del curso Desarrollo de Software V, Universidad Tecnológica de Panamá, Centro Regional de Veraguas. El catálogo, los préstamos y los datos de contacto son ficticios.</small></p>
+  </footer>
+</body>
+</html>

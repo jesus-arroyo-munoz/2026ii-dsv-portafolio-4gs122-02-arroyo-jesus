@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 img-src 'self';
+                 style-src 'self';
+                 base-uri 'self';
+                 form-action 'self'">
+                   
+  <meta name="description" content="Qué es el préstamo a domicilio de la Biblioteca Universitaria, qué ejemplares se prestan y cómo se renuevan los libros.">
+  <meta name="author" content="Equipo 03, Grupo 4GS122">
+  <title>Préstamo a domicilio | Biblioteca Universitaria</title>
+  <link rel="icon" href="assets/img/logo-biblioteca.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/biblioteca-base.css">
+</head>
+<body id="inicio">
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <img src="assets/img/logo-biblioteca.svg" alt="" width="64" height="64">
+    <hgroup>
+      <h1>Préstamo a domicilio</h1>
+      <p>Biblioteca Universitaria</p>
+    </hgroup>
+    <p>
+      Equipo 03 · Grupo 4GS122<br>
+      Jesús Arroyo · 4GS122-02<br>
+      Isaac Barba · 4GS122-03 <br>
+      Eduardo Barría · 4GS122-04
+    </p>
+  </header>
+
+  <nav aria-labelledby="titulo-menu">
+    <h2 id="titulo-menu">La biblioteca</h2>
+    <ul>
+      <li><a href="index.html" aria-current="page">Préstamo a domicilio</a></li>
+      <li><a href="catalogo.html">Catálogo y préstamos</a></li>
+      <li><a href="prestamo.html">Solicitar un préstamo</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <section id="servicio" aria-labelledby="titulo-servicio">
+      <h2 id="titulo-servicio">El servicio</h2>
+      <p>
+        El <dfn>préstamo a domicilio</dfn> permite llevar a casa los libros de la
+        <strong>Colección General</strong> para revisarlos, estudiar o investigar fuera
+        de la biblioteca. Quien los recibe responde de su buen uso y de devolverlos a tiempo.
+      </p>
+    </section>
+
+    <section id="ejemplares" aria-labelledby="titulo-ejemplares">
+      <h2 id="titulo-ejemplares">Ejemplares</h2>
+      <p>Cada título tiene varios ejemplares, y no todos se prestan:</p>
+      <ul>
+        <li>El <abbr title="ejemplar">e.</abbr>1 se reserva para consulta en sala.</li>
+        <li>Se prestan a domicilio del <abbr title="ejemplar">e.</abbr>2 en adelante, mientras estén disponibles.</li>
+        <li>Los libros prestados se cargan a la cuenta del usuario.</li>
+      </ul>
+    </section>
+
+    <section id="renovaciones" aria-labelledby="titulo-renovaciones">
+      <h2 id="titulo-renovaciones">Renovaciones</h2>
+      <p>Para renovar un préstamo se deben cumplir estas condiciones:</p>
+      <ol>
+        <li>El libro debe estar prestado a la cuenta de quien lo renueva.</li>
+        <li>La cuenta no debe tener adeudos ni multas.</li>
+        <li>Cada préstamo se puede renovar hasta tres veces; después de la tercera ya no admite más.</li>
+      </ol>
+    </section>
+
+    <section id="reglamento" aria-labelledby="titulo-reglamento">
+      <h2 id="titulo-reglamento">Lo que dice el reglamento</h2>
+      <blockquote cite="https://sistemadebibliotecas.utp.ac.pa/reglamento-de-sistema-de-bibliotecas">
+        <p>Los libros prestados se cargan a la cuenta del usuario, quien podrá renovarlos hasta tres veces, siempre que no tenga adeudos ni multas.</p>
+      </blockquote>
+      <p>
+        Fuente:
+        <a href="https://sistemadebibliotecas.utp.ac.pa/reglamento-de-sistema-de-bibliotecas"
+           target="_blank" rel="noopener noreferrer"><cite>Reglamento de Servicios
+        Bibliotecarios del Sistema de Bibliotecas</cite></a>
+      </p>
+    </section>
+
+    <aside aria-labelledby="titulo-recomendacion">
+      <h2 id="titulo-recomendacion">Antes de pedir un libro</h2>
+      <p>
+        Revisa en el <a href="catalogo.html">catálogo</a> cuántos ejemplares hay disponibles
+        a domicilio y cuáles de tus préstamos están por vencer.
+      </p>
+    </aside>
+  </main>
+
+  <footer>
+    <address>
+      <strong><cite>Biblioteca Universitaria</cite></strong><br>
+      Centro Regional de Veraguas, Santiago, Panamá<br>
+      <a href="mailto:prestamos@biblioteca.example">prestamos@biblioteca.example</a>
+    </address>
+    <p>Última actualización: <time datetime="2026-11-23">23 de noviembre de 2026</time>.</p>
+    <p><a href="#inicio">Volver arriba</a></p>
+    <p><small>Proyecto académico del curso Desarrollo de Software V, Universidad Tecnológica de Panamá, Centro Regional de Veraguas. El catálogo, los préstamos y los datos de contacto son ficticios.</small></p>
+  </footer>
+</body>
+</html>
